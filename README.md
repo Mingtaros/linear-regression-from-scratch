@@ -6,53 +6,17 @@ Membuat algoritma linear regression dari 0.
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
+## Nama / NIM
+Yahya / 13518029
 
-## Pengumpulan
-1. Fork repository ini.
-2. Tambahkan <i>source code</i> kalian.
-3. Ubah README ini menjadi berisikan:
-    - Nama / NIM
-    - Dasar Teori Regresi Linier
-    - Penjelasan singkat kode sumber
-    - Referensi
-4. Lakukan Pull Request dengan Format: Nama - NIM
-5. <i>Personal Chat</i> Leonardo W. (kontak ada di grup Ca-IRK 2018), merundingkan jadwal demo tugas.
-    - Demo berlangsung selama 15 menit.
-    - Demo dilakukan di Google Meet.
+## Dasar Teori Regresi Linier
+Regresi Linier yang dilakukan pada tugas ini menggunakan Multiple Linear Regression. Multiple Linear Regression akan melakukan regresi berdasarkan beberapa variable x terhadap y. Akurasi algoritma regresi linier dilakukan dengan menggunakan dua metode yaitu Mean Absolute Error(MAE) dan Root Mean Square Error(RMSE). Mean Absolute Error akan menghitung akurasi Regresi Linier yang dilakukan dengan menghitung rata rata dari nilai absolut selisih antara hasil prediksi dengan data aktual pada data test. Sedangkan, Root Mean Square Error akan menghitung akar kuadrat dari rata rata selisih hasil prediksi dengan data aktual yang dikuadratkan. 
 
-## Batasan-batasan
-1. Boleh menggunakan Library <b>apapun</b> asalkan bukan implementasi Linear Regression yang sudah ada (cth: Scikit-Learn).
-2. Algoritma Linear Regression dapat digunakan untuk jumlah atribut berapapun (kecuali 0).
-3. Algoritma Linear Regression hanya dapat menerima atribut-atribut numerik (`float` / `int`).
-    - Apabila terdapat atribut non-numerik, diharapkan untuk diproses terlebih dahulu.
-4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
-    - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
-    
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
+## Penjelasan Kode Sumber
+Pada tugas ini, saya menggunakan bahasa pemrograman Julia. Pada julia, tidak dapat membuat class dengan method khusus class tersebut. Oleh karena itu, akan dibuat file "regression.jl" yang mendeklarasikan modul LinearRegression. Pada modul tersebut akan dideklarasikan tipe data bentukan yang bernama Regression yang terdiri dari data sebagai data train, attribute sebagai list dari attribute pada variabel x, target sebagai variabel y yang akan di prediksi, model sebagai hasil regresi, dan dataTest sebagai data yang akan di prediksi dan di test akurasi algoritma nya. Kemudian akan dibuat setter untuk tiap property dari tipe data bentukan tersebut. 
 
-## Panduan
-Untuk mengerjakan bonus:<br>
-- Julia Documentation: https://docs.julialang.org/
-- Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
+Pada modul LinearRegression juga akan dideklarasikan beberapa fungsi terkait yang akan memudahkan perhitungan untuk training model serta prediksi seperti sumByAttribute dan sumProd. Kemudian, pada fungsi train akan melakukan multiple linear regression dan mengisi value dari hasil regresi tersebut ke property model yang ada pada tipe data bentukan. Setelah itu, terdapat fungsi predict yang akan melakukan prediksi terhadap dataTest pada tipe data bentukan, dan kemudian akan mengevaluasi akurasi dari algoritma menggunakan MAE dan RMSE. Hasil prediksi tersebut akan di return, karna selanjutnya akan dapat digunakan untuk visualisasi scatter plot dan line plot. 
 
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
+## Referensi
+1. Probability & Statistics for Engineers & Scientits 9th ed., Ronald E. Walpole et al.
 
-<br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
