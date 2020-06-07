@@ -24,7 +24,7 @@ def Plotting(x, y, k):
     # plt.annotate(label, (x,y), textcoords="offset points", xytext=(0,10), ha='center')
 
 # Visualize the dataframe with the regression line and value
-def Visualize(XTrain, YTrain, XTest, YTest, B0, B1, XLabel, YLabel):
+def Visualize(XTrain, YTrain, XTest, YTest, RegValue, B0, B1, XLabel, YLabel):
     # Determine x-range with xmin and xmax based on dataframe
     xmin = min(XTrain)
     candidate = min(XTest)
@@ -43,6 +43,10 @@ def Visualize(XTrain, YTrain, XTest, YTest, B0, B1, XLabel, YLabel):
     # Visualize every test value in dataframe with red color
     for i in range(len(XTest)):
         Plotting(XTest[i], YTest[i], 2)
+
+    # Visualize every predicted test value in dataframe with black color
+    for i in range(len(XTest)):
+        Plotting(XTest[i], RegValue[i], 3)
 
     # Visualize regression line with green color
     x = np.linspace(xmin, xmax, 10)
