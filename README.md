@@ -5,29 +5,29 @@ Linear Regression Module from 0 using julia and implemented in julia.ipynb
 The source code consists of a module in julia and an ipynb file for implementation. <br>
 In the module I used LinearAlgebra, Statistics, and DataFrames packages from julia to compute some calculation and to load the data itself. In the implementation I added Plots to show the visualization and CSV to read the csv given. <br>
 The algorithm module's constructor has attributes such as    <br>
-    dataset: the data <br>
-    xvar: the independent variables that affect the y variable <br>
-    yvar: the variable affected <br>
-    coeff: array of coeffisiens <br>
+    -dataset: the data <br>
+    -xvar: the independent variables that affect the y variable <br>
+    -yvar: the variable affected <br>
+    -coeff: array of coeffisiens <br>
 and functions such as <br>
-    linearRegression <br>
+    -linearRegression <br>
     ```
-    input: self<br>
+    input: self
     return: array of coeff
     ```<br>
     This function performs the calculation to find the array of coefficient by creating an array consisting the dot products of x variables and y variable and matrix of x, thus multiplying the invers of x matrix with the array.
     <br>
-    Prediction <br>
+    -Prediction <br>
     ```
-    input: self, data_test<br>
+    input: self, data_test<
     output: array of predictions
     ```
     <br>
     This function performs the calculation of prediction array by appending the array in question with the multiplication of array of coefficients with the testing data. 
     <br>
-    Error Parameter <br>
+    -Error Parameter <br>
     ```
-    input: self, predictions, data_test <br>
+    input: self, predictions, data_test 
     output: rms and mean abs error
     ```<br>
     This function will return the mean absolute error and the root mean square error by processing the difference between the result of prediction and the actual data
