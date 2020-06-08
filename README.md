@@ -18,7 +18,7 @@ and functions such as <br>
     input: self
     return: array of coeff
     ```
-    <br>
+  
     This function performs the calculation to find the array of coefficient by creating an array consisting the dot products of x variables and y variable and matrix of x, thus multiplying the invers of x matrix with the array.
     <br>
 ##### Prediction
@@ -26,14 +26,14 @@ and functions such as <br>
     input: self, data_test
     output: array of predictions
     ```
-    <br>
+    
     This function performs the calculation of prediction array by appending the array in question with the multiplication of array of coefficients with the testing data. 
-    <br>
+    
 ##### Error Parameter 
     ```
     input: self, predictions, data_test 
     output: rms and mean abs error
-    ```<br>
+    ```
     This function will return the mean absolute error and the root mean square error by processing the difference between the result of prediction and the actual data
 
 ## Theory
