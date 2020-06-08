@@ -134,9 +134,13 @@ end
 
 # Execute loader
 function loader_run(ldr::Loader)
-    ldr.dataFrame = CSV.read("../data/UAS_2019.csv")
+    ldr.dataFrame = CSV.read("../data/" * ldr.fileName)
     split_dataFrame(ldr::Loader)
+    return nothing
+end
 
+# Get all column information
+function column_Information(ldr::Loader)
     all_cols = get_All_Column(ldr)
     println("All column: ")
     for i = 1:length(all_cols)
@@ -150,8 +154,13 @@ function loader_run(ldr::Loader)
         println(string(i) * ". " * num_cols[i])
     end
     println()
-    ldr.x_columns = ["waktu_berangkat"]
-    ldr.y_columns = ["waktu_tempuh"]
+    return nothing
+end
+
+# Assign y_columns and x_columns with XCols and YCols
+function assign_x_y_variables(ldr::Loader, XCols, YCols)
+    ldr.x_columns = XCols
+    ldr.y_columns = YCols
     println("Selected x variable: ")
     for i = 1:length(ldr.x_columns)
         println(string(i) * ". " * ldr.x_columns[i])
@@ -161,6 +170,7 @@ function loader_run(ldr::Loader)
     for i = 1:length(ldr.y_columns)
         println(string(i) * ". " * ldr.y_columns[i])
     end
+    return nothing
 end
 
 end
