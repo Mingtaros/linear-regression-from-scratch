@@ -1,58 +1,58 @@
 # Linear Regression from Scratch
-Tugas Seleksi Ca-IRK 2018
+Linear Regression Module from 0 using julia and implemented in julia.ipynb
 
-Membuat algoritma linear regression dari 0.
+## Source Code
+The source code consists of a module in julia and an ipynb file for implementation. 
+In the module I used LinearAlgebra, Statistics, and DataFrames packages from julia to compute some calculation and to load the data itself. In the implementation I added Plots to show the visualization and CSV to read the csv given.
+The algorithm module's constructor has attributes such as    <br>
+    dataset: the data <br>
+    xvar: the independent variables that affect the y variable <br>
+    yvar: the variable affected <br>
+    coeff: array of coeffisiens <br>
+and functions such as <br>
+    linearRegression
+    '''
+    input: self
+    return: array of coeff
+    '''
+    Prediction
+    '''
+    input: self, data_test
+    output: array of predictions
+    '''
+    Error Parameter
+    '''
+    input: self, predictions, data_test
+    output: rms and mean abs error
+    '''
 
-## Deskripsi Persoalan
-Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
+## Theory
+Linear regression is a statistical approach for modelling relationship between a dependent variable with a given set of independent variables.
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
-
-## Pengumpulan
-1. Fork repository ini.
-2. Tambahkan <i>source code</i> kalian.
-3. Ubah README ini menjadi berisikan:
-    - Nama / NIM
-    - Dasar Teori Regresi Linier
-    - Penjelasan singkat kode sumber
-    - Referensi
-4. Lakukan Pull Request dengan Format: Nama - NIM
-5. <i>Personal Chat</i> Leonardo W. (kontak ada di grup Ca-IRK 2018), merundingkan jadwal demo tugas.
-    - Demo berlangsung selama 15 menit.
-    - Demo dilakukan di Google Meet.
-
-## Batasan-batasan
-1. Boleh menggunakan Library <b>apapun</b> asalkan bukan implementasi Linear Regression yang sudah ada (cth: Scikit-Learn).
-2. Algoritma Linear Regression dapat digunakan untuk jumlah atribut berapapun (kecuali 0).
-3. Algoritma Linear Regression hanya dapat menerima atribut-atribut numerik (`float` / `int`).
-    - Apabila terdapat atribut non-numerik, diharapkan untuk diproses terlebih dahulu.
-4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
-    - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
-    
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
-
-## Panduan
-Untuk mengerjakan bonus:<br>
-- Julia Documentation: https://docs.julialang.org/
-- Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
-
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
-
+## Reference
+### Julia
+Language: <br>
+https://docs.julialang.org/
+https://cheatsheets.quantecon.org/julia-cheatsheet.html
+https://datatofish.com/julia-tutorials/
 <br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
+Calculation: <br>
+https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/
+https://docs.julialang.org/en/v1/stdlib/Statistics/
+<br>
+Plotting: <br>
+https://docs.juliaplots.org/latest/tutorial/
+<br>
+
+### Linear Regression
+Algorithm: <br>
+http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm
+https://towardsdatascience.com/julia-for-data-science-how-to-build-linear-regression-from-scratch-with-julia-6d1521a00611
+https://alexandrugris.github.io/machine/learning/2017/03/25/MachineLearning-Notebook-2.html
+<br>
+Splitting: <br>
+https://developers.google.com/machine-learning/crash-course/training-and-test-sets/splitting-data
+
+## Author
+Byan Sakura
+13518066
