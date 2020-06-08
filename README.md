@@ -19,22 +19,26 @@ and functions such as <br>
     return: array of coeff
     ```
   
-    This function performs the calculation to find the array of coefficient by creating an array consisting the dot products of x variables and y variable and matrix of x, thus multiplying the invers of x matrix with the array.
-    <br>
+    This function performs the calculation to find the array of coefficient by creating 
+    an array consisting the dot products of x variables and y variable and matrix of x, 
+    thus multiplying the invers of x matrix with the array.
+    
 ##### Prediction
     ```
     input: self, data_test
     output: array of predictions
     ```
     
-    This function performs the calculation of prediction array by appending the array in question with the multiplication of array of coefficients with the testing data. 
+    This function performs the calculation of prediction array by appending the array in 
+    question with the multiplication of array of coefficients with the testing data. 
     
 ##### Error Parameter 
     ```
     input: self, predictions, data_test 
     output: rms and mean abs error
     ```
-    This function will return the mean absolute error and the root mean square error by processing the difference between the result of prediction and the actual data
+    This function will return the mean absolute error and the root mean square error by
+    processing the difference between the result of prediction and the actual data
 
 ## Theory
 Multiple linear regression is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. The goal of multiple linear regression (MLR) is to model the linear relationship between the explanatory (independent) variables and response (dependent) variable. <br>
