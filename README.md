@@ -4,28 +4,32 @@ Linear Regression Module from 0 using julia and implemented in julia.ipynb
 ## Source Code
 The source code consists of a module in julia and an ipynb file for implementation. <br>
 In the module I used LinearAlgebra, Statistics, and DataFrames packages from julia to compute some calculation and to load the data itself. In the implementation I added Plots to show the visualization and CSV to read the csv given. <br>
+### Module
+#### Constructor
 The algorithm module's constructor has attributes such as    <br>
-    -dataset: the data <br>
-    -xvar: the independent variables that affect the y variable <br>
-    -yvar: the variable affected <br>
-    -coeff: array of coeffisiens <br>
+    - dataset: the data <br>
+    - xvar: the independent variables that affect the y variable <br>
+    - yvar: the variable affected <br>
+    - coeff: array of coeffisiens <br>
+#### Functions
 and functions such as <br>
-    -linearRegression <br>
+##### linearRegression 
     ```
     input: self
     return: array of coeff
-    ```<br>
+    ```
+    <br>
     This function performs the calculation to find the array of coefficient by creating an array consisting the dot products of x variables and y variable and matrix of x, thus multiplying the invers of x matrix with the array.
     <br>
-    -Prediction <br>
+##### Prediction
     ```
-    input: self, data_test<
+    input: self, data_test
     output: array of predictions
     ```
     <br>
     This function performs the calculation of prediction array by appending the array in question with the multiplication of array of coefficients with the testing data. 
     <br>
-    -Error Parameter <br>
+##### Error Parameter 
     ```
     input: self, predictions, data_test 
     output: rms and mean abs error
@@ -48,6 +52,11 @@ In linear algebra terms, the least-squares parameter estimates β are the vector
 The vector normal equations are the same normal equations that one could obtain
 from taking derivatives. To solve the normal equations (i.e., to find the parameter
 estimates βˆ), one can multiply both sides with the inverse of X'X. Thus, the least-squares estimator of β is (in vector form)
+
+## Requirement
+1. Jupyter Notebook
+2. Julia
+3. From Julia: CSV, DataFrames, LinearAlgebra, Statistics, Plots
 
 ## Reference
 ### Julia
