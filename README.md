@@ -11,20 +11,20 @@ The algorithm module's constructor has attributes such as    <br>
     coeff: array of coeffisiens <br>
 and functions such as <br>
     linearRegression
-    '''
+    ```
     input: self
     return: array of coeff
-    '''
+    ```
     Prediction
-    '''
+    ```
     input: self, data_test
     output: array of predictions
-    '''
+    ```
     Error Parameter
-    '''
+    ```
     input: self, predictions, data_test
     output: rms and mean abs error
-    '''
+    ```
 
 ## Theory
 Linear regression is a statistical approach for modelling relationship between a dependent variable with a given set of independent variables.
