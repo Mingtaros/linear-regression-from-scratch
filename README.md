@@ -24,22 +24,22 @@ Regresi Linier merupakan suatu metode pendekatan untuk menggambarkan hubungan an
     <img align="center" src="assets/multiple-regression.png"
   </p>
 
-Jika variabel terikat lebih dari 1 (y1, y2, ..., yN) dengan variabel bebas berupa (x1, x2, ..., xN), maka dilakukan sebanyak N regresi untuk setiap y yang terdefinisi. Setiap y akan diregresikan dengan kumpulan variabel bebas yang telah ditetapkan.
+Jika variabel terikat lebih dari satu (y1, y2, ..., yN) dengan variabel bebas berupa (x1, x2, ..., xN), maka dilakukan sebanyak N regresi untuk setiap y yang terdefinisi. Setiap y akan diregresikan dengan kumpulan variabel bebas yang telah ditetapkan.
 
 ## Seputar Kode Sumber
 Algoritma Regresi Linier dibuat dalam bahasa pemrograman Julia. Mengingat bahasa pemrograman Julia bukan bahasa berparadigma objek, maka untuk mewakili setiap class / object tertentu, digunakan Abstract Data Type (ADT) yang merupakan tipe bentukan yang terdiri atas atribut-atribut tertentu.
 
 Kode sumber terdiri atas 4 bagian, yaitu:
-1. Data Loader and Splitting
+1. Data Loader and Splitting<br>
    Modul ini bertanggung jawab dalam pemrosesan pembacaan data, pemisahan data (splitting), dan pemilahan kolom untuk menjadi variabel bebas dan variabel terikat. Library yang digunakan dalam modul ini adalah DataFrames dan CSV. Kode sumber untuk modul ini dapat diakses pada `./src/loader.jl`
 
-2. Linear Regression
+2. Linear Regression<br>
    Modul ini bertanggung jawab dalam pembuatan garis regresi linear berdasarkan masukkan data-data variabel bebas dan variabel terikat. Perhitungan setiap koefisien dalam regresi linear (b0, b1, ..., bN) diselesaikan dengan memanfaatkan sistem persamaan linear (SPL) multi-variabel. Agar SPL dapat diselesaikan dalam waktu yang cepat, maka digunakan metode Gauss-Jordan sebagai algoritma dalam menemukan solusi-solusi SPL yang berupa koefisien regresi linear tersebut. Kode sumber untuk modul ini dapat diakses pada `./src/regression.jl`
 
-3. Visualizer
+3. Visualizer<br>
    Modul ini bertanggung jawab dalam memvisualisasikan titik-titik data Test dan garis regresi linier yang dihasilkan (plotting). Modul ini cukup memanfaatkan library Plots untuk proses plotting data. Kode sumber untuk modul ini dapat diakses pada `./src/visualizer.jl`
 
-4. Main Program
+4. Main Program<br>
    Bagian ini dibuat dalam kakas Jupyter Notebook sebagai salah satu syarat *main program* yang diperlukan. Instruksi dan langkah-langkah main program lebih lanjut dijelaskan pada notebook tersebut. File `.ipynb` notebook tersebut dapat diakses pada `./src/main.ipynb` dengan menggunakan aplikasi Jupyter Notebook.
 
 ## Library yang Diperlukan
