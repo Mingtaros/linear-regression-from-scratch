@@ -15,11 +15,13 @@ and functions such as <br>
     input: self
     return: array of coeff
     ```
+    <br>
     Prediction
     ```
     input: self, data_test
     output: array of predictions
     ```
+    <br>
     Error Parameter
     ```
     input: self, predictions, data_test
@@ -27,18 +29,19 @@ and functions such as <br>
     ```
 
 ## Theory
-Linear regression is a statistical approach for modelling relationship between a dependent variable with a given set of independent variables.
+Multiple linear regression is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. The goal of multiple linear regression (MLR) is to model the linear relationship between the explanatory (independent) variables and response (dependent) variable. <br>
+![alt text](https://github.com/[bsakura]/[linear-regression-from-scratch]/blob/[img]/image.jpg?raw=true)
 
 ## Reference
 ### Julia
 Language: <br>
-https://docs.julialang.org/
-https://cheatsheets.quantecon.org/julia-cheatsheet.html
+https://docs.julialang.org/<br>
+https://cheatsheets.quantecon.org/julia-cheatsheet.html<br>
 https://datatofish.com/julia-tutorials/
 <br>
 Calculation: <br>
-https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/
-https://docs.julialang.org/en/v1/stdlib/Statistics/
+https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/<br>
+https://docs.julialang.org/en/v1/stdlib/Statistics/<br>
 <br>
 Plotting: <br>
 https://docs.juliaplots.org/latest/tutorial/
@@ -46,8 +49,8 @@ https://docs.juliaplots.org/latest/tutorial/
 
 ### Linear Regression
 Algorithm: <br>
-http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm
-https://towardsdatascience.com/julia-for-data-science-how-to-build-linear-regression-from-scratch-with-julia-6d1521a00611
+http://www.stat.yale.edu/Courses/1997-98/101/linmult.htm<br>
+https://towardsdatascience.com/julia-for-data-science-how-to-build-linear-regression-from-scratch-with-julia-6d1521a00611<br>
 https://alexandrugris.github.io/machine/learning/2017/03/25/MachineLearning-Notebook-2.html
 <br>
 Splitting: <br>
