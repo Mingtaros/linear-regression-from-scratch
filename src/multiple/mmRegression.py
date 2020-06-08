@@ -14,6 +14,7 @@ class Regression:
     def run(self):
         for i in range(len(self.matY)):
             Matrix = self.generate_Linear_Equation(self.matY[i])
+            print(Matrix)
             self.solve_Equation(Matrix)
             self.showRegression(i)
 
@@ -151,8 +152,7 @@ class Regression:
         return 1 - (SSE / SST)
 
 matX = [[0, 10, 20, 30, 40]]
-arrY = [[31, 32, 47, 79, 89],[30, 40, 50, 60, 70]]
-
+arrY = [[31, 32, 47, 79, 89]]
 N = len(arrY[0])
 k = len(matX)
 print(k)
@@ -160,4 +160,3 @@ print(k)
 Reg = Regression(matX, arrY, N, k)
 Reg.run()
 Reg.test(matX, arrY)
-print(Reg.matB[0])
