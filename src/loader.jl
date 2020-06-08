@@ -5,6 +5,7 @@ module DataLoader
 using CSV
 using DataFrames
 
+# Abstract Data Type: Loader
 mutable struct Loader
     fileName
     splitFactor
@@ -22,11 +23,6 @@ function split_dataFrame(ldr::Loader)
     ldr.midpoint = convert(Int64, round(size * ldr.splitFactor, digits=0))
     ldr.trainFrame = ldr.dataFrame[1: ldr.midpoint,:]
     ldr.testFrame = ldr.dataFrame[ldr.midpoint: size,:]
-    println("Train Dataframe")
-    println(ldr.trainFrame)
-    println()
-    println("Test Dataframe")
-    println(ldr.testFrame)
     return nothing
 end
 

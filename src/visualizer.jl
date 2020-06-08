@@ -6,6 +6,8 @@ module Visualizer
 
 using Plots
 
+# Visualize the test data with the trained regression line
+# Return a plot configuration based on input parameter
 function Visualize(XTest, YTest, B0, B1, XLabel, YLabel)
     plotTitle = XLabel * " dan " * YLabel
     scatter(XTest, YTest, title = plotTitle, label="Data test")

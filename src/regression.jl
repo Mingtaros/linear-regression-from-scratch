@@ -2,6 +2,7 @@
 # Contain all module to process certain data to get the regression linear
 module LinearRegression
 
+# Abstract Data Type: Regression
 mutable struct Regression
     matX
     matY
@@ -192,7 +193,6 @@ end
 
 # Process all arrX and arrY data to get regression linear equation
 function run(reg::Regression)
-    println("success")
     for i = 1:length(reg.matY)
         Matrix = generate_Linear_Equation(reg, reg.matY[i])
         solve_Equation(reg, Matrix)
@@ -221,6 +221,7 @@ function test(reg::Regression, testFrame, testY)
             result = result * string(YHat[i])
             println(result)
         end
+        println()
         println("Regression Accuracy = ",compute_RSquare(testY[l], YHat))
     end
 end

@@ -3,56 +3,66 @@ Tugas Seleksi Ca-IRK 2018
 
 Membuat algoritma linear regression dari 0.
 
-## Deskripsi Persoalan
+## Deskripsi Masalah
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
+## Identitas Pembuat
+- Nama    : Michael Hans
+- NIM     : 13518056
 
-## Pengumpulan
-1. Fork repository ini.
-2. Tambahkan <i>source code</i> kalian.
-3. Ubah README ini menjadi berisikan:
-    - Nama / NIM
-    - Dasar Teori Regresi Linier
-    - Penjelasan singkat kode sumber
-    - Referensi
-4. Lakukan Pull Request dengan Format: Nama - NIM
-5. <i>Personal Chat</i> Leonardo W. (kontak ada di grup Ca-IRK 2018), merundingkan jadwal demo tugas.
-    - Demo berlangsung selama 15 menit.
-    - Demo dilakukan di Google Meet.
+## Dasar Teori Regresi Linier
+Regresi Linier merupakan suatu metode pendekatan untuk menggambarkan hubungan antara variabel terikat y dengan satu atau lebih variabel bebas x. Tujuan dari Regresi Linier adalah untuk memprediksi nilai variabel terikat berdasarkan data-data yang telah diperoleh sebelumnya. Secara umum, jenis regresi linier terbagi menjadi dua, yaitu:
+- Regresi Linier Sederhana (Simple Linear Regression)
+  Regresi ini hanya melibatkan tepat dua variabel, yaitu sebuah variabel terikat y dan sebuah variabel bebas x. Persamaan umum untuk regresi linier sederhana adalah sebagai berikut.
+  <p align="center">
+  ![SimpleRegression](assets/simple-regression.png)
+  </p>
 
-## Batasan-batasan
-1. Boleh menggunakan Library <b>apapun</b> asalkan bukan implementasi Linear Regression yang sudah ada (cth: Scikit-Learn).
-2. Algoritma Linear Regression dapat digunakan untuk jumlah atribut berapapun (kecuali 0).
-3. Algoritma Linear Regression hanya dapat menerima atribut-atribut numerik (`float` / `int`).
-    - Apabila terdapat atribut non-numerik, diharapkan untuk diproses terlebih dahulu.
-4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
-    - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
-    
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
+- Regresi Linier Berganda (Multiple Linear Regression)
+  Regresi ini bisa melibatkan lebih dari dua variabel, yaitu sebuah variabel terikat y dan satu atau lebih variabel bebas x. Persamaan umum untuk regresi linier berganda adalah sebagai berikut.
+  <p align="center">
+  ![MultipleRegression](assets/multiple-regression.png)
+  </p>
 
-## Panduan
-Untuk mengerjakan bonus:<br>
+Jika variabel terikat lebih dari 1 (y1, y2, ..., yN) dengan variabel bebas berupa (x1, x2, ..., xN), maka dilakukan sebanyak N regresi untuk setiap y yang terdefinisi. Setiap y akan diregresikan dengan kumpulan variabel bebas yang telah ditetapkan.
+
+## Seputar Kode Sumber
+Algoritma Regresi Linier dibuat dalam bahasa pemrograman Julia. Mengingat bahasa pemrograman Julia bukan bahasa berparadigma objek, maka untuk mewakili setiap class / object tertentu, digunakan Abstract Data Type (ADT) yang merupakan tipe bentukan yang terdiri atas atribut-atribut tertentu.
+
+Kode sumber terdiri atas 4 bagian, yaitu:
+1. Data Loader and Splitting
+   Modul ini bertanggung jawab dalam pemrosesan pembacaan data, pemisahan data (splitting), dan pemilahan kolom untuk menjadi variabel bebas dan variabel terikat. Library yang digunakan dalam modul ini adalah DataFrames dan CSV. Kode sumber untuk modul ini dapat diakses pada `./src/loader.jl`
+
+2. Linear Regression
+   Modul ini bertanggung jawab dalam pembuatan garis regresi linear berdasarkan masukkan data-data variabel bebas dan variabel terikat. Perhitungan setiap koefisien dalam regresi linear (b0, b1, ..., bN) diselesaikan dengan memanfaatkan sistem persamaan linear (SPL) multi-variabel. Agar SPL dapat diselesaikan dalam waktu yang cepat, maka digunakan metode Gauss-Jordan sebagai algoritma dalam menemukan solusi-solusi SPL yang berupa koefisien regresi linear tersebut. Kode sumber untuk modul ini dapat diakses pada `./src/regression.jl`
+
+3. Visualizer
+   Modul ini bertanggung jawab dalam memvisualisasikan titik-titik data Test dan garis regresi linier yang dihasilkan (plotting). Modul ini cukup memanfaatkan library Plots untuk proses plotting data. Kode sumber untuk modul ini dapat diakses pada `./src/visualizer.jl`
+
+4. Main Program
+   Bagian ini dibuat dalam kakas Jupyter Notebook sebagai salah satu syarat *main program* yang diperlukan. Instruksi dan langkah-langkah main program lebih lanjut dijelaskan pada notebook tersebut. File `.ipynb` notebook tersebut dapat diakses pada `./src/main.ipynb` dengan menggunakan aplikasi Jupyter Notebook.
+
+## Library yang Diperlukan
+- Plots (untuk melakukan plotting)
+- DataFrames (untuk pengolahan dataframe)
+- CSV (untuk pembacaan CSV)
+
+## Checklist Pengerjaan
+- [X] Algoritma Linear Regression
+- [X] Splitting Dataset
+- [X] Visualisasi Regresi
+- [X] Bahasa Pemrograman Julia
+
+## Referensi
+- Vehicle Dataset from Cardekho: https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho.
 - Julia Documentation: https://docs.julialang.org/
 - Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
+- Add Julia to Jupyter: https://datatofish.com/add-julia-to-jupyter/
+- Julia Plots Tutorial: https://docs.juliaplots.org/latest/tutorial/
+- Gauss-Jordan Elimination: https://www.geeksforgeeks.org/program-for-gauss-jordan-elimination-method/
 
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
+## Author
+**13518056 - Michael Hans** - *Designer, Programmer, and Tester*
 
-<br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
+## Acknowledgements
+* Asisten IRK, Leonardo Wijaya
