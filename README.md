@@ -2,7 +2,7 @@
 Linear Regression Module from 0 using julia and implemented in julia.ipynb
 
 ## Source Code
-The source code consists of a module in julia and an ipynb file for implementation. 
+The source code consists of a module in julia and an ipynb file for implementation. <br>
 In the module I used LinearAlgebra, Statistics, and DataFrames packages from julia to compute some calculation and to load the data itself. In the implementation I added Plots to show the visualization and CSV to read the csv given.
 The algorithm module's constructor has attributes such as    <br>
     dataset: the data <br>
@@ -30,7 +30,6 @@ and functions such as <br>
 
 ## Theory
 Multiple linear regression is a statistical technique that uses several explanatory variables to predict the outcome of a response variable. The goal of multiple linear regression (MLR) is to model the linear relationship between the explanatory (independent) variables and response (dependent) variable. <br>
-![alt text](https://github.com/bsakura/linear-regression-from-scratch/tree/master/img/1.png?raw=true)
 
 ## Reference
 ### Julia
