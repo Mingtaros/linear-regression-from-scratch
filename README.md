@@ -12,16 +12,16 @@ Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika,
 
 ## Dasar Teori Regresi Linier
 Regresi Linier merupakan suatu metode pendekatan untuk menggambarkan hubungan antara variabel terikat y dengan satu atau lebih variabel bebas x. Tujuan dari Regresi Linier adalah untuk memprediksi nilai variabel terikat berdasarkan data-data yang telah diperoleh sebelumnya. Secara umum, jenis regresi linier terbagi menjadi dua, yaitu:
-- Regresi Linier Sederhana (Simple Linear Regression)
+- <b>Regresi Linier Sederhana (Simple Linear Regression)</b>
   Regresi ini hanya melibatkan tepat dua variabel, yaitu sebuah variabel terikat y dan sebuah variabel bebas x. Persamaan umum untuk regresi linier sederhana adalah sebagai berikut.
   <p align="center">
-  ![SimpleRegression](assets/simple-regression.png)
+    <img align="center" src="../linear-regression-from-scratch/assets/simple-regression.png"
   </p>
 
-- Regresi Linier Berganda (Multiple Linear Regression)
+- <b>Regresi Linier Berganda (Multiple Linear Regression)</b>
   Regresi ini bisa melibatkan lebih dari dua variabel, yaitu sebuah variabel terikat y dan satu atau lebih variabel bebas x. Persamaan umum untuk regresi linier berganda adalah sebagai berikut.
   <p align="center">
-  ![MultipleRegression](assets/multiple-regression.png)
+    <img align="center" src="../linear-regression-from-scratch/assets/multiple-regression.png"
   </p>
 
 Jika variabel terikat lebih dari 1 (y1, y2, ..., yN) dengan variabel bebas berupa (x1, x2, ..., xN), maka dilakukan sebanyak N regresi untuk setiap y yang terdefinisi. Setiap y akan diregresikan dengan kumpulan variabel bebas yang telah ditetapkan.
