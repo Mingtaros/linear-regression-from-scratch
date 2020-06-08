@@ -15,13 +15,13 @@ Regresi Linier merupakan suatu metode pendekatan untuk menggambarkan hubungan an
 - <b>Regresi Linier Sederhana (Simple Linear Regression)</b>
   Regresi ini hanya melibatkan tepat dua variabel, yaitu sebuah variabel terikat y dan sebuah variabel bebas x. Persamaan umum untuk regresi linier sederhana adalah sebagai berikut.
   <p align="center">
-    <img align="center" src="../linear-regression-from-scratch/assets/simple-regression.png"
+    <img align="center" src="assets/simple-regression.png"
   </p>
 
 - <b>Regresi Linier Berganda (Multiple Linear Regression)</b>
   Regresi ini bisa melibatkan lebih dari dua variabel, yaitu sebuah variabel terikat y dan satu atau lebih variabel bebas x. Persamaan umum untuk regresi linier berganda adalah sebagai berikut.
   <p align="center">
-    <img align="center" src="../linear-regression-from-scratch/assets/multiple-regression.png"
+    <img align="center" src="assets/multiple-regression.png"
   </p>
 
 Jika variabel terikat lebih dari 1 (y1, y2, ..., yN) dengan variabel bebas berupa (x1, x2, ..., xN), maka dilakukan sebanyak N regresi untuk setiap y yang terdefinisi. Setiap y akan diregresikan dengan kumpulan variabel bebas yang telah ditetapkan.
