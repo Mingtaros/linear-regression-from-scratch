@@ -3,6 +3,7 @@ using LinearAlgebra
 
 module LinReg
 
+    using LinearAlgebra
     export linreg, dotproduct, train
 
     mutable struct linreg
@@ -40,7 +41,6 @@ module LinReg
         # show(labels)
         for _ in 1:iter
             for i in 1:size(features,1)
-                hypothesis = model.bias .+ dot(model.weight,features[i,:])
                 #============ Explanation =========
                 y^ is hypothesis (label), y is for the real value (label)
                 every iteratiorn, the weight will be updated
@@ -53,26 +53,37 @@ module LinReg
                     since y^  = features . weight + bias , therefore dy^/dw = features
                 therefore dL/dw = -2 * (y - y^) * features
                 new weight = old weight - learnrate * dL/dw =#
-                model.weight = model.weight - ((model.learnrate / size(model.weight,1) * -2) .* dotproduct((labels[i:i,:] - hypothesis),features[i:i,:]))
-                model.bias = model.bias - ((model.learnrate * -2)*(labels[i:i,] - hypothesis))
+                hypothesis = model.bias .+ dot(model.weight,features[i,:])
+                # show("a")
+                # show(hypothesis)
+                # show(labels[i:i,:])
+                # show(-0.5 .* dotproduct((labels[i:i,:] - hypothesis),features[i:i,:]))
+                # show((model.learnrate / size(model.weight,1) * -1) )
+                # print('\n')
+                model.weight = model.weight - ((model.learnrate / size(data,1) * -1) .* dotproduct((labels[i:i,:] - hypothesis),features[i:i,:]))
+                # show(model.weight)
+                # print('\n')
+                model.bias = model.bias - ((model.learnrate*-1 / size(data,1))*(labels[i:i,] - hypothesis))
             end
         end
     end
 
 end
 
-a = linreg(3,1,0.005)
-data = zeros(Float64,5,4)
-for i in 1:size(data,1)
-    tot = 0
-    for j in 1:size(data,2)
-        if j != size(data,2)
-            data[i,j] = sqrt(((rand(Int)%8))^2)+1
-            tot = tot + data[i,j] * j
-        else
-            data[i,j] = tot
-        end
-    end
-end
+# using LinReg.linreg, LinReg.train
+
+# a = linreg(3,1,0.005)
+# data = zeros(Float64,5,4)
+# for i in 1:size(data,1)
+#     tot = 0
+#     for j in 1:size(data,2)
+#         if j != size(data,2)
+#             data[i,j] = sqrt(((rand(Int)%8))^2)+1
+#             tot = tot + data[i,j] * j
+#         else
+#             data[i,j] = tot
+#         end
+#     end
+# end
 # train(a,data,3000)
 # show(a.weight)
