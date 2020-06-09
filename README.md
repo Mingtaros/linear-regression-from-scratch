@@ -3,6 +3,35 @@ Tugas Seleksi Ca-IRK 2018
 
 Membuat algoritma linear regression dari 0.
 
+## PENGUMPULAN
+
+1. Nama/Nim : Aqil Abdul Aziz/13518002
+
+2. Regresi Linier
+<br>
+Regresi Linier merupakan pendekatan linier pemodelan hubungan antara suatu variabel yang dependen, terhadap kumpulan variabel lain yang independen. Rumus dasar Regresi Linier berupa : 
+<br>
+<b>Y = C + M1X1 + M2X2 + .... + MNXN </b>
+<br>
+Disini, N merupakan jumlah variabel independen yang akan memengaruhi variabel dependen(Y) yang akan diprediksi, C merupakan intercept, X merupakan variabel independen, dan M merupakan weight atau koefisien regresi.
+<br>
+Koefisien regresi didapat dari regresi terus menerus terhadap set data yang ada, dengan melibatkan Loss Function untuk estimasi jarak antara koefisien regresi sekarang dan koefisien regresi yang lebih sesuai dengan data yang dipakai untuk regresi
+<br>
+Regresi linier diaplikasikan dalam finance, ekonomiks, dan merupakan salah satu fondasi machine learning
+
+3. Penjelasan Kode <br> 
+Pada linearreg.py dan linearreg.jl , terdapat class/struct yang merepresentasikan sebuah regressor yang diinitiate dengan jumlah variabel independen dan dimensi variabel dependen yang akan diprediksi. Terdapat juga method/fungsi train untuk para regressor, yang menerima sebuah data berbentuk matriks dengan dimensi yang sesuai beserta jumlah iterasi training yang akan dilakukan. Train() bisa dibilang akan meregresikan weight dan koefisien yang sudah ada terhadap data yang disediakan terus menerus sejumlah iterasi yang diinginkan oleh pemakai. Setelah training selesai, perubahan akan terlihat pada weight regressor yang sudah disesuaikan dengan data. Kode memiliki komentar sehingga bisa dibaca langsung.
+<br>
+Pada .ipynb adalah pemrosesan data yang ada di 'car data.csv', lalu dihantamkannya data tersebut pada regressor yang diimport dari file .jl dan .py, lalu plotting hasil prediksi data terhadap data aktual
+<br>
+
+4. Referensi
+    1. NANYA ABANG (beneran ga boong)
+    2. https://docs.julialang.org/
+
+
+
+
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
