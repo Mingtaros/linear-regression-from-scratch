@@ -33,7 +33,7 @@ Modul ini memiliki sebuah struct regression yang terdiri atas <br>
 7. bmatrix : matrix untuk menyimpan nilai B hasil perhitungan
 
 <br>
-Modul ini juga memuat berbagai fungsi untuk melakukan perhitungan terhadap data train dan test. Untuk data train terdapat pada fungsi train yang akan dicari persamaan model regresi liear dengan menggunakan perkalian antar matriks, sehingga diperoleh nilai untuk b0, b1, b2, ... bk. Untuk melakukan prediksi data, terdapat fungsi test yang memanfaatkan hasil persamaan model sebelmunya untuk menentukan nilai y hasil prediksi dan menampilkan nilai akurasi perhitungan dalam MSE, RMSE, dan R<sup>2.
+Modul ini juga memuat berbagai fungsi untuk melakukan perhitungan terhadap data train dan test. Untuk data train terdapat pada fungsi train yang akan dicari persamaan model regresi liear dengan menggunakan perkalian antar matriks, sehingga diperoleh nilai untuk b0, b1, b2, ... bk. Untuk melakukan prediksi data, terdapat fungsi test yang memanfaatkan hasil persamaan model sebelmunya untuk menentukan nilai y hasil prediksi dan menampilkan nilai akurasi perhitungan dalam MSE, RMSE, dan R<sup>2</sup>.
 
 
 ## Referensi
