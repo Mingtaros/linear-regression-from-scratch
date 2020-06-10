@@ -9,10 +9,6 @@ Anna Elvira Hartoyo / 13518045
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-
 
 ## Dasar Teori Regresi Linear
 Dalam dunia statistika, regresi linear adalah pendeketan yang digunakan untuk melekukan pemodelan hubungan antara variable terikat Y dan satu atau lebih variable bebas X. Kegunaan dari regresi linear adalah melakukan prediksi berdasarkan data-data yang telah dimiliki sebelumnya.<br> 
