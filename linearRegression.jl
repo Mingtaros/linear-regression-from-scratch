@@ -42,12 +42,13 @@ module LinearRegression
         n = size(reg.xVar, 1)
         tmpyVar = zeros(n+1)
         tmpyVar[1] = sumByxVar(reg, reg.yVar)
+        
         for i = 1 : n
             tmpyVar[i+1] = dotProduct(reg, reg.xVar[i], reg.yVar)
         end
 
-        n_data = size(reg.data,1)
         tmp = zeros(n+1, n+1)
+        n_data = size(reg.data,1)
         for i = 1 : n+1
             for j = 1 : n+1
                 if i == 1
@@ -63,6 +64,23 @@ module LinearRegression
         end
 
         reg.model = inv(tmp)*tmpyVar
+    end
+
+    function equation(train_array)
+        eq = "ŷ = " * string(train_array[1]) * " "
+        add = ""
+        for i=2:length(train_array)
+            if train_array[i] >= 0
+                add = add * "+ " * string(train_array[i]) * "x" * string(i-1) * " "
+            else
+                add = add * string(train_array[i]) * "x" * string(i-1) * " "
+            end
+        end
+        eq = eq * add
+        println("Regression Equation:")
+        println(eq)
+    
+        return nothing
     end
     
     function meanAbsoluteError(reg::Regression,res,test)
