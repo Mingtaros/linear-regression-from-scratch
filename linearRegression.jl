@@ -10,26 +10,31 @@ module LinearRegression
         model
     end
 
+    # setter variabel x
     function setxVar(reg::Regression, xVar)
         reg.xVar = xVar
         return nothing
     end
 
+    # setter variabel y
     function setyVar(reg::Regression, yVar)
         reg.yVar = yVar
         return nothing
     end
 
+    # Menjumlahkan nilai berdasarkan variabel x
     function sumByxVar(reg::Regression, xVar)
         return sum(reg.data[:,xVar])
     end
 
+    # Fungsi untuk memudahkan dot product
     function dotProduct(reg::Regression, data1, data2)
         tmpdata1 = reg.data[:,data1]
         tmpdata2 = reg.data[:,data2]
         return dot(tmpdata1, tmpdata2)
     end
 
+    # Hanya untuk testing berapa hasil dari y prediksi
     function y_means(reg::Regression, arr, n_row)
         sum = 0
         for i=1:n_row
@@ -38,6 +43,7 @@ module LinearRegression
         return sum/n_row  
     end
 
+    # fungsi untuk melakukan train
     function train(reg::Regression)
         n = size(reg.xVar, 1)
         tmpyVar = zeros(n+1)
@@ -53,11 +59,15 @@ module LinearRegression
             for j = 1 : n+1
                 if i == 1
                     if j == 1
-                        tmp[i,j] = n_data else tmp[i,j] = sumByxVar(reg, reg.xVar[j-1])
+                        tmp[i,j] = n_data 
+                    else 
+                        tmp[i,j] = sumByxVar(reg, reg.xVar[j-1])
                     end
                 else
                     if j == 1
-                        tmp[i,j] = sumByxVar(reg, reg.xVar[i-1]) else tmp[i,j] = dotProduct(reg, reg.xVar[i-1], reg.xVar[j-1])
+                        tmp[i,j] = sumByxVar(reg, reg.xVar[i-1]) 
+                    else 
+                        tmp[i,j] = dotProduct(reg, reg.xVar[i-1], reg.xVar[j-1])
                     end
                 end
             end
@@ -66,6 +76,7 @@ module LinearRegression
         reg.model = inv(tmp)*tmpyVar
     end
 
+    # fungsi untuk mencetak persamaan
     function equation(train_array)
         eq = "ŷ = " * string(train_array[1]) * " "
         add = ""
@@ -83,6 +94,7 @@ module LinearRegression
         return nothing
     end
     
+    # fungsi untuk menghitung MAE
     function meanAbsoluteError(reg::Regression,res,test)
         n = nrow(test)
         means = 0
@@ -95,6 +107,7 @@ module LinearRegression
         println("Mean absolute error : $(mar)")
     end
 
+    # fungsi untuk melakukan prediksi, menghasilkan array y
     function prediction(reg::Regression, testing)
         n = nrow(testing)
         result = zeros(n)
@@ -102,7 +115,9 @@ module LinearRegression
         for i = 1 : size(reg.model, 1)
             for j = 1 : n 
                 if i == 1
-                    result[j] = reg.model[i] else result[j] += reg.model[i] * testing[j:j,reg.xVar[i-1]][1]
+                    result[j] = reg.model[i] 
+                else 
+                    result[j] += reg.model[i] * testing[j:j,reg.xVar[i-1]][1]
                 end
             end
         end
@@ -110,7 +125,7 @@ module LinearRegression
         return result
     end
     
-
+    # fungsi untuk menghasilkan RMS
     function rootMeanSquare(reg::Regression,res,test)
         n = nrow(test)
         Rmse = 0

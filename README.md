@@ -6,53 +6,33 @@ Membuat algoritma linear regression dari 0.
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
+## Identitas
+Muhammad Farid Adilazuarda / 13518040
 
-## Pengumpulan
-1. Fork repository ini.
-2. Tambahkan <i>source code</i> kalian.
-3. Ubah README ini menjadi berisikan:
-    - Nama / NIM
-    - Dasar Teori Regresi Linier
-    - Penjelasan singkat kode sumber
-    - Referensi
-4. Lakukan Pull Request dengan Format: Nama - NIM
-5. <i>Personal Chat</i> Leonardo W. (kontak ada di grup Ca-IRK 2018), merundingkan jadwal demo tugas.
-    - Demo berlangsung selama 15 menit.
-    - Demo dilakukan di Google Meet.
+## Dasar Teori Regresi Linear
+Dalam dunia statistika, regresi linear adalah pendeketan yang digunakan untuk melekukan pemodelan hubungan antara variable terikat Y dan satu atau lebih variable bebas X. Kegunaan dari regresi linear adalah melakukan prediksi berdasarkan data-data yang telah dimiliki sebelumnya.<br> 
+Berdasarkan jumlah penggunaan variable bebas, regresi linear dapat dikategorikan menjadi dua, yaitu regresi linear univariate (simple linear regression) dan regresi linear multivariate (multiple linear regression). Simple lienar regression digunakan untuk mengetahui pengaruh antara satu buah variabel bebas terhadap satu buah variabel terikat. Sedangkan pada multiple linear regression, variable bebas yang terlibat tidak hanya satu saja melainkan beberapa variabel bebas.
 
-## Batasan-batasan
-1. Boleh menggunakan Library <b>apapun</b> asalkan bukan implementasi Linear Regression yang sudah ada (cth: Scikit-Learn).
-2. Algoritma Linear Regression dapat digunakan untuk jumlah atribut berapapun (kecuali 0).
-3. Algoritma Linear Regression hanya dapat menerima atribut-atribut numerik (`float` / `int`).
-    - Apabila terdapat atribut non-numerik, diharapkan untuk diproses terlebih dahulu.
-4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
-    - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
-    
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
+## Penjelasan Kode Sumber
+Algoritma untuk memodelkan multiple linear regression dibuat dengan bahasa Julia (.jl) dan terdapat pada file linearRegression.jl yang memuat module linearRegression.<br>
+Modul ini memiliki sebuah struct regression yang terdiri atas : <br>
 
-## Panduan
-Untuk mengerjakan bonus:<br>
-- Julia Documentation: https://docs.julialang.org/
-- Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
+1. testData : dataset untuk testing, sebanyak 20% dari total data masukan
+2. data : dataset untuk training data
+3. xVar : data untuk variable x (variabel bebas)
+4. yVar : data untuk variable y (variabel terikat)
+5. model : koefisien dari persamaan regresi linear untuk setiap atribut
 
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
+Pada julia, tidak dapat membuat class dengan method khusus class tersebut. Oleh karena itu, akan dibuat file "linearRegression.jl" yang mendeklarasikan modul LinearRegression. Pada modul tersebut akan dideklarasikan tipe data bentukan yang bernama Regression. Kemudian akan dibuat setter untuk tiap atribut dari tipe data bentukan tersebut. 
 
-<br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
+1. Main Library<br>
+   Pada modul LinearRegression juga akan dideklarasikan beberapa fungsi untuk memudahkan training dan prediksi yaitu dotProduct dan perhitungan error. Kemudian, pada fungsi train akan melakukan multiple linear regression dan mengisi value dari hasil regresi tersebut ke property model yang ada pada tipe data bentukan. Setelah itu, terdapat fungsi predict yang akan melakukan prediksi terhadap dataTest pada tipe data bentukan, dan kemudian akan mengevaluasi akurasi dari algoritma menggunakan Mean Absolute Error dan Root Mean Square Error, kalkulasi error mereturn hasil dari selisih prediksi dengan data aktual. Hasil prediksi tersebut akan di return, karna selanjutnya akan dapat digunakan untuk visualisasi scatter plot dan line plot. 
+
+2. Visualizer<br>
+   Modul ini berguna untuk memvisualisasikan titik-titik Data Test dan garis regresi linier yang dihasilkan (plotting). Modul ini memanfaatkan library Plots untuk proses plotting data.
+
+## Referensi
+1. Probability & Statistics for Engineers & Scientits 9th ed., Ronald E. Walpole et al.
+2. Julia Documentation: https://docs.julialang.org/
+3. Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
+4.  Vehicle Dataset from Cardekho: https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho.
