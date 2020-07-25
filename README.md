@@ -36,3 +36,5 @@ Pada julia, tidak dapat membuat class dengan method khusus class tersebut. Oleh 
 2. Julia Documentation: https://docs.julialang.org/
 3. Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
 4.  Vehicle Dataset from Cardekho: https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho.
+5. https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d
+6. https://medium.com/human-in-a-machine-world/mae-and-rmse-which-metric-is-better-e60ac3bde13d
