@@ -13,7 +13,7 @@ Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika,
 ## Dasar Teori Regresi
 Regresi linear adalah suatu pendekatan yang memodelkan hubungan antara variabel terikat Y dengan satu atau lebih variabel bebas X. Sehingga, dengan menggunakan regresi linier, kita bisa memprediksi nilai variabel Y dengan menggunakan variabel X.<br>
 Regresi linier memiliki persamaan sebagai berikut
-<img src="https://render.githubusercontent.com/render/math?math=\hat{Y} = \theta_0 + \theta_1 X_i + ... + \theta_1 X_n">
+<img src="https://render.githubusercontent.com/render/math?math=\hat{Y} = {\theta_0} + {\theta_1} X_i + ... + {\theta_1} X_n">
 dimana:
 $$\hat{Y}$$: predicted value
 n: jumlah feature nya
