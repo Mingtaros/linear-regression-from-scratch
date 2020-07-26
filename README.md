@@ -21,7 +21,7 @@ n: jumlah feature nya <br>
 <img src="https://render.githubusercontent.com/render/math?math=\theta_i">: weight dari featurenya<br>
 <img src="https://render.githubusercontent.com/render/math?math=\theta_0">: bias<br>
 <br>
-Untuk mencari nilai $$\theta$$ bisa dengan menggunakan normal equation sebagai berikut
+Untuk mencari nilai <img src="https://render.githubusercontent.com/render/math?math=\theta"> bisa dengan menggunakan normal equation sebagai berikut
 <img src="https://eli.thegreenplace.net/images/math/20baabd9d33dcd26003bc44c7d81ba39e1ad4caa.png" alt="normal-equation-img">
 yang pembuktiannya bisa dilihat dari artikel ini https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression
 
