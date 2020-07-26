@@ -3,22 +3,36 @@ Tugas Seleksi Ca-IRK 2018
 
 Membuat algoritma linear regression dari 0.
 
+## Author
+Taufiq Husada Daryanto<br>
+NIM: 13518058
+
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
+## Dasar Teori Regresi
+Regresi linear adalah suatu pendekatan yang memodelkan hubungan antara variabel terikat Y dengan satu atau lebih variabel bebas X. Sehingga, dengan menggunakan regresi linier, kita bisa memprediksi nilai variabel Y dengan menggunakan variabel X.<br>
+Regresi linier memiliki persamaan sebagai berikut
+$$\hat{Y} = \theta_0 + \theta_1 X_i + ... + \theta_1 X_n$$ 
+dimana:
+$$\hat{Y}$$: predicted value
+n: jumlah feature nya
+$$X_i$$: value dari feature nya
+$$\theta_i$$: weight dari featurenya
+$$\theta_0$$: bias
+<br>
+Untuk mencari nilai $$\theta$$ bisa dengan menggunakan normal equation sebagai berikut
+<img src="https://eli.thegreenplace.net/images/math/20baabd9d33dcd26003bc44c7d81ba39e1ad4caa.png" alt="normal-equation-img">
+yang pembuktiannya bisa dilihat dari artikel ini https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression
+
+## Penjelasan Kode Sumber
+Implementasi class LinearRegression ada di file mylib.py <br>
+cara penggunaanya sebagai berikut <br>
+
+`from mylib import MyLinearRegression` <br>
+`myLinearRegression = new MyLinearRegression()` <br>
+`myLinearRegression.fit(X_train, y_train)`        # fit training dataset <br>
+`myLinearRegression.predict(X_test)`              # predict test dataset <br>
 
 ## Pengumpulan
 1. Fork repository ini.
