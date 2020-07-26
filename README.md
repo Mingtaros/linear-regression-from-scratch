@@ -17,9 +17,9 @@ Regresi linier memiliki persamaan sebagai berikut <br>
 dimana: <br>
 <img src="https://render.githubusercontent.com/render/math?math=\hat{Y}">: predicted value<br>
 n: jumlah feature nya <br>
-<img src="https://render.githubusercontent.com/render/math?math=X_i">:value dari feature nya<br>
-<img src="https://render.githubusercontent.com/render/math?math=theta_i">:weight dari featurenya<br>
-<img src="https://render.githubusercontent.com/render/math?math=theta_0">:bias<br>
+<img src="https://render.githubusercontent.com/render/math?math=X_i">: value dari feature nya<br>
+<img src="https://render.githubusercontent.com/render/math?math=\theta_i">: weight dari featurenya<br>
+<img src="https://render.githubusercontent.com/render/math?math=\theta_0">: bias<br>
 <br>
 Untuk mencari nilai $$\theta$$ bisa dengan menggunakan normal equation sebagai berikut
 <img src="https://eli.thegreenplace.net/images/math/20baabd9d33dcd26003bc44c7d81ba39e1ad4caa.png" alt="normal-equation-img">
@@ -38,3 +38,4 @@ cara penggunaanya sebagai berikut <br>
 ## References
 1. O'Reilly., Hands-on Machine Learning with Scikit-Learn, Keras & TensorFlow
 2. https://eli.thegreenplace.net/2014/derivation-of-the-normal-equation-for-linear-regression
+3. https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho
