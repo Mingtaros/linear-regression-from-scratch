@@ -6,53 +6,27 @@ Membuat algoritma linear regression dari 0.
 ## Deskripsi Persoalan
 Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Buatlah algoritma Regresi Linear versi kalian sendiri dan cobalah memakai algoritma tersebut untuk memproses dataset!
 
-## Spesifikasi Tugas
-1. Buatlah algoritma Linear Regression FROM SCRATCH
-2. Program ditulis dalam bahasa <b>Python</b> dengan menggunakan kakas [Jupyter Notebook](https://jupyter.org/)
-    1. Class Linear Regression ditulis pada file Python (.py) (Jangan lupa untuk didokumentasikan dengan baik).
-    2. Class Linear Regression yang dibuat tadi lalu di-<i>import</i> dan digunakan pada <i>Notebook</i> (.ipynb).
-3. Program pada <i>Notebook</i> melakukan hal-hal dibawah ini:
-    1. Mengambil data CSV (link ada di bawah)
-    2. Memproses data mentah
-    3. Melakukan <i>splitting</i> dataset (yang telah diproses) untuk <i>Train</i> dan <i>Test</i>.
-    4. Memasukkan data Train ke algoritma Linear Regression yang sudah kalian buat.
-    5. Melakukan prediksi terhadap data Test.
-    6. Menunjukkan akurasi dari algoritma yang telah dibuat terhadap dataset yang diberikan.
-    7. Memvisualisasikan hasil prediksi dengan scatter plot (untuk datanya) + line plot (untuk modelnya).
+## Identitas diri
+William Fu 13518055
 
-## Pengumpulan
-1. Fork repository ini.
-2. Tambahkan <i>source code</i> kalian.
-3. Ubah README ini menjadi berisikan:
-    - Nama / NIM
-    - Dasar Teori Regresi Linier
-    - Penjelasan singkat kode sumber
-    - Referensi
-4. Lakukan Pull Request dengan Format: Nama - NIM
-5. <i>Personal Chat</i> Leonardo W. (kontak ada di grup Ca-IRK 2018), merundingkan jadwal demo tugas.
-    - Demo berlangsung selama 15 menit.
-    - Demo dilakukan di Google Meet.
+## Dasar Teori
+Multiple regression model dihasilkan apabila suatu variabel dependen (y) dipengaruhi oleh lebih dari satu variabel independen (x0, x1, ..., xk) dengan hubungan linier. Model regresi dapat ditulis sebagai berikut
 
-## Batasan-batasan
-1. Boleh menggunakan Library <b>apapun</b> asalkan bukan implementasi Linear Regression yang sudah ada (cth: Scikit-Learn).
-2. Algoritma Linear Regression dapat digunakan untuk jumlah atribut berapapun (kecuali 0).
-3. Algoritma Linear Regression hanya dapat menerima atribut-atribut numerik (`float` / `int`).
-    - Apabila terdapat atribut non-numerik, diharapkan untuk diproses terlebih dahulu.
-4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
-    - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
+<img src=https://latex.codecogs.com/gif.latex?%5Chat%7By%7D%20%3D%20b_%7B0%7D%20&plus;%20b_%7B1%7Dx_%7B1%7D%20&plus;%20...%20&plus;%20b_%7Bk%7Dx_%7Bk%7D>
+
+Dalam menentukan model regresi, variabel dapat disimpan pada matriks X untuk variabel independen dan matriks y untuk variabel dependen. Koefisien dan konstanta pada model regresi dapat ditentukan dengan mencari vektor b pada persamaan berikut
+
+<img src=https://latex.codecogs.com/gif.latex?%28X%5E%7Bt%7DX%29b%20%3D%20X%5E%7Bt%7Dy>
+
+## Penjelasan Kode
+Modul linreg menyediakan fungsi dan prosedur yang dibutuhkan untuk:
+- membaca data dalam bentuk file csv
+- melakukan splitting data untuk train dan test (dengan pembagian 80%-29% secara default)
+- melakukan multiple linear regression dengan memanfaatkan struktur data matriks
+- menentukan quality of fit (RSquare) model yang dihasilkan
+- melakukan visualisasi hasil regresi dalam bentuk scatter plot (actual data) dan garis regresi (predicted model) 
     
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
+## Referensi
+Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. (1993). Probability and statistics for engineers and scientists (Vol. 5). New York: Macmillan.
 
-## Panduan
-Untuk mengerjakan bonus:<br>
-- Julia Documentation: https://docs.julialang.org/
-- Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
-
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
-
-<br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
+Linear Regression with Python https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
