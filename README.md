@@ -34,6 +34,7 @@ Sehingga bisa dipisah menjadi tiga buah matriks sebagai berikut:
 <img src="/img/matriks2.png"/>
 
 Dengan menggunakan rumus dan kaidah matriks diperoleh hasil dari koefisien regresi dari variabel bebas ke-i adalah sebagai berikut:
+
 <img src="/img/rumus.png"/>
 
 Dengan mengetahui hasil dari koefisien regresi tiap variabel bebas, maka kita bisa melakukan estimasi terhadap nilai y sesuai dengan masukan x yang merupakan variabel bebas.
