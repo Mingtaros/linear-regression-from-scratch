@@ -2,18 +2,18 @@
 Tugas Seleksi Ca-IRK 2018
 Membuat algoritma linear regression dari 0.
 
-Felicia Gillian Tekad Tuerah
-13518070
+* Felicia Gillian Tekad Tuerah
+* 13518070
 
 ## Deskripsi Persoalan
 Seperti yang telah dipelajari pada mata kuliah Probabilitas dan Statistika, terdapat suatu algoritma yang bernama <b>Regresi Linier (Linear Regression)</b>. Akan dibuat sebuah algoritma Regresi Linear versi saya sendiri dan algoritma tersebut akan digunakan untuk memproses dataset!
 
 ## Library
 Pada pengerjaan tugas ini, saya menggunakan beberapa library yakni 
-1. numpy (untuk memproses operasi array)
-2. pandas (untuk memproses dataframe)
-3. matplotlib (untuk melakukan plotting)
-4. sklearn (untuk memisahkan data menjadi data test dan data train)
+1. **numpy** (untuk memproses operasi array)
+2. **pandas** (untuk memproses dataframe)
+3. **matplotlib** (untuk melakukan plotting)
+4. **sklearn** (untuk memisahkan data menjadi data test dan data train)
 
 ## Dasar Teori Regresi Linier
 Pada pembuatan algoritma regresi linier ini, saya menggunakan prinsip <b>Least Squares for Multiple Regression</b>. 
@@ -40,12 +40,12 @@ Dengan mengetahui hasil dari koefisien regresi tiap variabel bebas, maka kita bi
 
 ## Penjelasan Kode
 Kode saya terbagi atas dua buah modularitas yakni :
-1. regression.py
+1. **regression.py**
 Modul ini, terdiri atas tiga buah methods yang membantu dalam perhitungan koefisien regresi dan juga melakukan estimasi terhadap variabel bebas.
 - multiplyMatrix digunakan untuk melakukan operasi perkalian terhadap dua buah matriks.
 - koefRegression digunakan untuk mengembalikan array of koefisien (B)
 - multipleLinearRegression digunakan untuk mengembalikan hasil prediksi dari masukan variabel bebas x.
-2. Regresi.ipynb
+2. **Regresi.ipynb**
 Modul ini memanggil fungsi multipleLinearRegression yang terdapat dalam modul pertama dan menampilkan proses-proses pengolahan data-set serta menampilkan perbandingan antara data hasil estimasi dengan data sesungguhnya dan juga garis regresi linear yang terbentuk.
 
 ## Referensi
