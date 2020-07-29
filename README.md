@@ -51,4 +51,16 @@ Dalam menentukan model regresi, variabel dapat disimpan pada matriks X untuk var
 
 b = (invers(X'X))*(X'Y)
 
+## Penjelasan singkat kode sumber
 
+Kode saya ini sangat sederhana. Terdapat file linearregression sebagai pendukung utama dari program yang berisikan algoritma-algoritma penting seperti mencari nilai prediksi Y, nilai koefisien B, nilai SSE, SST dan RSquare. Terdapat juga file notebook yang menjelaskan bagaimana cara meregresi suatu data mobil yang memiliki fitur:
+   1. Menambahkan Data
+   2. Melakukan Splitting Data
+   3. Melakukan Multiple Linear Regression beserta Kualitas Regresinya dengan R Square
+   4. Melakukan Plotting hubungan antar data (soon)
+   
+## Referensi
+1. Stackoverflow
+2. https://www.youtube.com/watch?v=qdOG7YMolmA
+3. https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html
+4. Dosen Probstat Tercinta
