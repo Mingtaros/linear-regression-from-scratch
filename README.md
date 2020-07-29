@@ -1,6 +1,7 @@
 # Linear Regression from Scratch
 Tugas Seleksi Ca-IRK 2018
 
+Muhammad Ayyub Abdurrahman - 13518076 - Calon Asisten Lab IRK
 Membuat algoritma linear regression dari 0.
 
 ## Deskripsi Persoalan
@@ -41,18 +42,13 @@ Seperti yang telah kalian pelajari pada mata kuliah Probabilitas dan Statistika,
 4. Data CSV yang dipakai dapat di-download pada link [berikut](https://www.kaggle.com/nehalbirla/vehicle-dataset-from-cardekho).
     - <b>AKAN TETAPI</b> diperbolehkan menggunakan dataset lain.
     
-## Bonus
-- Gunakan bahasa [Julia](https://julialang.org/) (.jl) (Julia juga dapat digunakan pada Jupyter Notebook)
+## Dasar Teori Regresi Linier
+Multiple regression model dihasilkan apabila suatu variabel dependen (y) dipengaruhi oleh lebih dari satu variabel independen (x0, x1, ..., xk) dengan hubungan linier. Model regresi dapat ditulis sebagai berikut
 
-## Panduan
-Untuk mengerjakan bonus:<br>
-- Julia Documentation: https://docs.julialang.org/
-- Julia Cheatsheet: https://cheatsheets.quantecon.org/julia-cheatsheet.html
+Y = b0 + b1x1 + b2x2 + .. + bnxn
 
-## Points Granted
-Max Point: 2000<br>
-Bonus: + 750
+Dalam menentukan model regresi, variabel dapat disimpan pada matriks X untuk variabel independen dan matriks y untuk variabel dependen. Koefisien dan konstanta pada model regresi dapat ditentukan dengan mencari vektor b pada persamaan berikut
 
-<br>
-==================================================================<br>
-<i>*Segala pertanyaan dapat ditanyakan melalui LINE Group Ca-IRK 2018 atau dapat melalui pc langsung.</i>
+b = (invers(X'X))*(X'Y)
+
+
