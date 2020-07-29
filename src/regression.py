@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 
 def multipleLinearRegression(xPredict, x, y):
@@ -31,3 +32,32 @@ def multiplyMatrix(a, b):
                 hasil[i][j] += a[i][k]*b[k][j]
 
     return hasil
+
+
+def SSE(yreal, yestimate):
+    # mengembalikan hasil dari sum square of error dari data yreal dan yestimate
+    # inisialisasi hasil
+    hasil = 0
+    for i in range(len(yreal)):
+        selisih = yreal[i]-yestimate[i]
+        hasil += math.pow(selisih, 2)
+
+    return hasil
+
+
+def SST(yreal):
+    # mengembalikan hasil dari sum square of total dari data yreal
+    # cari avg dari data terlebih dahulu
+    yavg = np.mean(yreal)
+    # inisialisasi hasil
+    hasil = 0
+    for i in range(len(yreal)):
+        selisih = yreal[i]-yavg
+        hasil += math.pow(selisih, 2)
+    return hasil
+
+
+def kualitasRegresi(yreal, yestimate):
+    sse = SSE(yreal, yestimate)
+    sst = SST(yreal)
+    return(1-(sse/sst))
