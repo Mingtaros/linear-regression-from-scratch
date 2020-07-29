@@ -28,5 +28,3 @@ Modul linreg menyediakan fungsi dan prosedur yang dibutuhkan untuk:
     
 ## Referensi
 Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. (1993). Probability and statistics for engineers and scientists (Vol. 5). New York: Macmillan.
-
-Linear Regression with Python https://machinelearningmastery.com/implement-simple-linear-regression-scratch-python/
